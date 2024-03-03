@@ -1,0 +1,18 @@
+
+doctype html
+html
+  head
+    title Login
+    link(rel='stylesheet', href='/css/style_login.css')
+  body
+    .login-container
+      h1 Login to Your Account
+      form(action='/api/users/login', method='POST')
+        .form-group
+              label(for='email') Email:
+              input#email(type='email', name='email', required=true)
+        .form-group
+              label(for='password') Password:
+              input#password(type='password', name='password', required=true)
+        .form-group
+              button(type='submit') Login

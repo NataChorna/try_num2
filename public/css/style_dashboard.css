@@ -1,0 +1,9 @@
+.dashboard-container nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.dashboard-container nav ul li {
+    margin: 0 10px;
+}

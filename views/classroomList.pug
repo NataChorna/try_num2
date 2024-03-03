@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title Classroom List
+    link(rel='stylesheet', href='/css/style_classroomList.css')
+  body
+    header
+      h1 Available Classrooms
+    .classrooms-container
+      if classrooms.length
+        ul
+          each classroom in classrooms
+            li
+              a(href=`/api/classrooms/${classroom._id}`) #{classroom.name} - Capacity: #{classroom.capacity}
+      else
+        p No classrooms available.

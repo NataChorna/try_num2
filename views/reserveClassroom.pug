@@ -1,0 +1,42 @@
+//extends layout.pug
+//
+//block content
+//  h1 Reserve Classroom: #{classroom.name}
+//  form(method='POST', action=`/classrooms/reserve/${classroom._id}`)
+//    .form-group
+//      label(for='date') Date:
+//      input#date(type='date', name='date', required=true)
+//    .form-group
+//      label(for='time') Time:
+//      input#time(type='time', name='time', required=true)
+//    .form-group
+//      label(for='duration') Duration (hours):
+//      input#duration(type='number', name='duration', required=true, min='1', max='8')
+//    button(type='submit') Reserve
+doctype html
+html
+  head
+    title Reserve Classroom
+    link(rel='stylesheet', href='/css/style_reserveClassroom.css')
+  body
+    .reservation-container
+      h1 Reserve a Classroom
+      form(action='/api/reservations', method='POST')
+        .form-group
+          label(for='classroomId') Classroom ID
+          input(type='text', name='classroomId', required=true)
+        .form-group
+          label(for='userId') User ID
+          input(type='text', name='userId', required=true)
+        .form-group
+          label(for='startTime') Start Time
+          input(type='datetime-local', name='startTime', required=true)
+        .form-group
+          label(for='duration') Duration (in hours)
+          input(type='number', name='duration', required=true)
+        .form-group
+          label(for='status') Status
+          select(name='status', required=true)
+            option(value='reserved') Reserved
+            option(value='available') Available
+        button(type='submit') Reserve

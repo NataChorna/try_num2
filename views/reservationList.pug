@@ -1,0 +1,22 @@
+doctype html
+html
+    head
+        title Reservation List
+        link(rel='stylesheet', href='/css/style_reservationList.css')
+    body
+        header
+            h1 Your Reservations
+        .reservations-container
+            if reservations.length
+                ul
+                    each reservation in reservations
+                        li
+                            p Reservation ID: #{reservation._id}
+                            p Classroom ID: #{reservation.classroomId}
+                            p Start Time: #{reservation.startTime}
+                            p Duration: #{reservation.duration} hours
+                            p Status: #{reservation.status}
+                            a(href=`/api/reservations/edit/${reservation._id}`) Edit
+                            a(href=`/api/reservations/delete/${reservation._id}`) Delete
+            else
+                p No reservations found.

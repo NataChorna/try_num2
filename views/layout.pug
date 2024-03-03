@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="/stylesheets/style.css")
+    title Classroom Reservation System
+  body
+    header
+      nav
+        ul
+          li: a(href="/") Home
+          li: a(href="/classrooms") Classrooms
+          li: a(href="/login") Login
+          li: a(href="/dashboard") Dashboard
+
+    main
+      block content
+
+    footer
+      p &copy; #{new Date().getFullYear()} Classroom Reservation System

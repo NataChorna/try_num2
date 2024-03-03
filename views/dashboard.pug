@@ -1,0 +1,29 @@
+//extends layout.pug
+//
+//block content
+//  h1 Welcome to the Classroom Reservation System
+//  nav
+//    ul
+//      li
+//        a(href='/classrooms') View Classrooms
+//      li
+//        a(href='/reservations') View My Reservations
+//      li
+//        a(href='/logout') Logout
+doctype html
+html
+  head
+    title Dashboard
+    link(rel='stylesheet', href='/css/style_dashboard.css.css')
+  body
+    header
+      h1 Dashboard
+    .dashboard-container
+      nav
+        ul
+          li
+            a(href='/api/classrooms') Classrooms
+          li
+            a(href='/api/reservations') Reservations
+      .content
+        | Welcome to the Dashboard! Select an option from the menu.
